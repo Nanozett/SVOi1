@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Логотип Молодежный центр Патриот">
+        </div>
+        <h1 >Молодежный центр "Патриот"</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="discussions.html">Мероприятия</a></li>
+                <li><a href="quizzes.html">Образование</a></li>
+                <li><a href="geroy.html">Мой Герой</a></li>
+                <li><a href="onas.html">О нас</a></li>
+                <button id="profileButton" class="profile-button">
+                        <i class="fas fa-user"></i>
+                    </button>
+                    <a>ㅤ</a>
+
+            </ul>
+        </nav>
+    </header>
+
+    <div class="banner">
+        <img src="images/banner.jpg" alt="Знамя Победы">
+    </div>
+
+    <main>
+        <section class="news-section">
+            <h2>Последние новости</h2>
+            <div class="news-container">
+                <!-- Новость 1 -->
+                <div class="news-card">
+                    <img src="images/img1.jpg" alt="Новость 1">
+                    <h3>Российским военным осталось около 500 метров до границы ЛНР возле Белогоровки</h3>
+                    <p>Российские силы продвинулись ближе к административной границе Луганской Народной Республики в районе Белогоровки и реки Северский Донец. Слава России!</p>
+                    <a href="#" class="read-more" data-news-id="1">Читать далее</a>
+                </div>
+
+                <!-- Новость 2 -->
+                <div class="news-card">
+                    <img src="images/img2.jpg" alt="Новость 2">
+                    <h3>В Якутске торжественно встретили Героя России Андрея Григорьева</h3>
+                    <p>Якутский штурмовик, Герой Российской Федерации Андрей Григорьев 27 февраля вернулся домой из Москвы после получения награды. Бойца торжественно встретили в аэропорту столицы республики.</p>
+                    <a href="#" class="read-more" data-news-id="2">Читать далее</a>
+                </div>
+
+                <!-- Новость 3 -->
+                <div class="news-card">
+                    <img src="images/img3.jpg" alt="Новость 3">
+                    <h3>Торжественное открытие республиканского этапа Всероссийского конкурса «Моя профессия – ИТ»</h3>
+                    <p>В рамках коркурса участники будут разрабатывать проекты по таким направлениям:✅ Образование;✅ Социальные инновации;✅ Автоматизация бизнеса.</p>
+                    <a href="#" class="read-more" data-news-id="3">Читать далее</a>
+                </div>
+
+                <!-- Новость 4 -->
+                <div class="news-card">
+                    <img src="images/img4.jpg" alt="Новость 3">
+                    <h3>Родимир Максимов с позывным Бурхат получил звание Героя Российской Федерации.</h3>
+                    <p>Родимир Максимов из Таттинского района — восьмой якутянин, удостоенный звания Героя России за время (СВО).</p>
+                    <a href="#" class="read-more" data-news-id="4">Читать далее</a>
+                </div>
+
+                <!-- Новость 5 -->
+                <div class="news-card">
+                    <img src="images/img5.jpg" alt="Новость 3">
+                    <h3>«Игры Манчаары» пройдет в 2025 году в Таттинском улусе.</h3>
+                    <p>Двадцать вторая по счету Спартакиада по национальным видам спорта «Игры Манчаары» пройдет в 2025 году в Таттинском улусе. Подготовка к мероприятию началась.</p>
+                    <a href="#" class="read-more" data-news-id="5">Читать далее</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="newsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <img id="modalImage" src="" alt="" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 20px;">
+            <p id="modalDescription"></p>
+        </div>
+    </div>
+
+
+
+        <p>&copy; 2025 Государственное бюджетное учреждение Республики Саха (Якутия) Молодежный центр «Патриот». Все права защищены.</p>
+   
+    <div id="ad-banner">
+        <img src="images/adbanner.jpg" alt="Реклама">
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
