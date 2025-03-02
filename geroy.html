@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой герой</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+                <div class="logo">
+            <img src="images/logo.png" alt="Логотип Молодежный центр Патриот">
+        </div>
+        <h1 >ПатриотСаха.ru</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="discussions.html">Мероприятия</a></li>
+                <li><a href="quizzes.html">Образование</a></li>
+                <li><a href="geroy.html">Мой Герой</a></li>
+                <li><a href="onas.html">О нас</a></li>
+                <button id="profileButton" class="profile-button">
+                        <i class="fas fa-user"></i>
+                    </button>
+                    <li><a href="">ㅤ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <h2>Мой герой</h2>
+
+            
+            <button id="addHeroButton" class="add-hero-button">+ Добавить героя</button>
+
+       
+            <div class="district-select">
+                <label for="district">Выберите район:</label>
+                <select id="district">
+                    <option value="">-- Выберите район --</option>
+                    <option value="aby">Абыйский</option>
+                    <option value="aldan">Алданский</option>
+                    <option value="allahov">Аллаиховский</option>
+                    <option value="amga">Амгинский</option>
+                    <option value="anabar">Анабарский</option>
+                    <option value="bulun">Булунский</option>
+                    <option value="viluy">Верхневилюйский</option>
+                    <option value="kolym">Верхнеколымский</option>
+                    <option value="verhoyansk">Верхоянский</option>
+                    <option value="viluyskiy">Вилюйский</option>
+                    <option value="gorniy">Горный</option>
+                    <option value="kobiy">Кобяйский</option>
+                    <option value="lensk">Ленский</option>
+                    <option value="meginokangas">Мегино-Кангаласский</option>
+                    <option value="mirniy">Мирнинский</option>
+                    <option value="mom">Момский национальный эвенский</option>
+                    <option value="nam">Намский</option>
+                    <option value="nerungri">Нерюнгринский</option>
+                    <option value="kolymsk">Нижнеколымский</option>
+                    <option value="nurba">Нюрбинский</option>
+                    <option value="oimakon">Оймяконский</option>
+                    <option value="olenek">Оленёкский национальный эвенкийский</option>
+                    <option value="olekminsk">Олёкминский</option>
+                    <option value="srednekolym">Среднеколымский</option>
+                    <option value="suntar">Сунтарский</option>
+                    <option value="taatta">Таттинский</option>
+                    <option value="tompo">Томпонский</option>
+                    <option value="ustaldan">Усть-Алданский</option>
+                    <option value="ustmay">Усть-Майский</option>
+                    <option value="ustyan">Усть-Янский</option>
+                    <option value="hangalas">Хангаласский</option>
+                    <option value="churapcha">Чурапчинский</option>
+                    <option value="evenbyt">Эвено-Бытантайский национальный</option>
+                    <option value="shatai">Жатай</option>
+                    <option value="ykt">Якутск</option>
+                    
+                </select>
+            </div>
+
+            
+            <div id="heroList" class="hero-list">
+                
+            </div>
+        </section>
+    </main>
+
+
+    <div id="addHeroModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Добавить героя</h2>
+            <form id="addHeroForm">
+                <label for="heroDistrict">Район:</label>
+                <select id="heroDistrict" name="heroDistrict" required>
+                    <option value="aby">Абыйский</option>
+                    <option value="aldan">Алданский</option>
+                    <option value="allahov">Аллаиховский</option>
+                    <option value="amga">Амгинский</option>
+                    <option value="anabar">Анабарский</option>
+                    <option value="bulun">Булунский</option>
+                    <option value="viluy">Верхневилюйский</option>
+                    <option value="kolym">Верхнеколымский</option>
+                    <option value="verhoyansk">Верхоянский</option>
+                    <option value="viluyskiy">Вилюйский</option>
+                    <option value="gorniy">Горный</option>
+                    <option value="kobiy">Кобяйский</option>
+                    <option value="lensk">Ленский</option>
+                    <option value="meginokangas">Мегино-Кангаласский</option>
+                    <option value="mirniy">Мирнинский</option>
+                    <option value="mom">Момский национальный эвенский</option>
+                    <option value="nam">Намский</option>
+                    <option value="nerungri">Нерюнгринский</option>
+                    <option value="kolymsk">Нижнеколымский</option>
+                    <option value="nurba">Нюрбинский</option>
+                    <option value="oimakon">Оймяконский</option>
+                    <option value="olenek">Оленёкский национальный эвенкийский</option>
+                    <option value="olekminsk">Олёкминский</option>
+                    <option value="srednekolym">Среднеколымский</option>
+                    <option value="suntar">Сунтарский</option>
+                    <option value="taatta">Таттинский</option>
+                    <option value="tompo">Томпонский</option>
+                    <option value="ustaldan">Усть-Алданский</option>
+                    <option value="ustmay">Усть-Майский</option>
+                    <option value="ustyan">Усть-Янский</option>
+                    <option value="hangalas">Хангаласский</option>
+                    <option value="churapcha">Чурапчинский</option>
+                    <option value="evenbyt">Эвено-Бытантайский национальный</option>
+                    <option value="shatai">Жатай</option>
+                    <option value="ykt">Якутск</option>
+                </select>
+
+                <label for="heroName">Имя:</label>
+                <input type="text" id="heroName" name="heroName" required>
+
+                <label for="heroSurname">Фамилия:</label>
+                <input type="text" id="heroSurname" name="heroSurname" required>
+
+                <label for="heroAwards">Награды:</label>
+                <textarea id="heroAwards" name="heroAwards" required></textarea>
+
+                <label for="heroBirthYear">Год рождения:</label>
+                <input type="number" id="heroBirthYear" name="heroBirthYear" required>
+
+                <label for="heroSchool">Школа:</label>
+                <input type="text" id="heroSchool" name="heroSchool" required>
+
+                <button type="submit">Добавить</button>
+            </form>
+        </div>
+    </div>
+
+
+
+    <script src="scripts.js"></script>
+
+        <script type="module">
+        // Импорт Firebase модулей
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+        import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+          apiKey: "AIzaSyBjCKJcg2Cs2xjeIZdDAea8MOgXT_aOKnE",
+          authDomain: "patriotykt-59e2e.firebaseapp.com",
+          databaseURL: "https://patriotykt-59e2e-default-rtdb.firebaseio.com",
+          projectId: "patriotykt-59e2e",
+          storageBucket: "patriotykt-59e2e.firebasestorage.app",
+          messagingSenderId: "138322763855",
+          appId: "1:138322763855:web:de27b2222bd8a86b318a3a",
+          measurementId: "G-1BV8LBRLNR"
+};
+
+// Открытие модального окна
+document.getElementById('addHeroButton').addEventListener('click', () => {
+  document.getElementById('addHeroModal').style.display = 'block';
+});
+
+// Закрытие модального окна
+document.querySelector('.close-button').addEventListener('click', () => {
+  document.getElementById('addHeroModal').style.display = 'none';
+});
+
+// Обработка формы добавления героя
+document.getElementById('addHeroForm').addEventListener('submit', (e) => {
+  e.preventDefault(); // Предотвращаем перезагрузку страницы
+
+  const heroDistrict = document.getElementById('heroDistrict').value;
+  const heroName = document.getElementById('heroName').value;
+  const heroSurname = document.getElementById('heroSurname').value;
+  const heroAwards = document.getElementById('heroAwards').value;
+  const heroBirthYear = document.getElementById('heroBirthYear').value;
+  const heroSchool = document.getElementById('heroSchool').value;
+
+  // Добавление данных в Firestore
+  db.collection('hero').add({
+    district: heroDistrict,
+    name: heroName,
+    surname: heroSurname,
+    awards: heroAwards,
+    birthYear: heroBirthYear,
+    school: heroSchool
+  }).then(() => {
+    alert('Герой успешно добавлен!');
+    document.getElementById('addHeroModal').style.display = 'none'; // Закрыть модальное окно
+    document.getElementById('addHeroForm').reset(); // Очистить форму
+    fetchHeroes(); // Обновить список героев
+  }).catch((error) => {
+    console.error('Ошибка при добавлении героя: ', error);
+    alert('Произошла ошибка при добавлении героя.');
+  });
+});
+
+db.collection('heroes').get().then((querySnapshot) => {
+  if (querySnapshot.empty) {
+    console.log("Нет данных в коллекции heroes"); // Проверка на пустую коллекцию
+    return;
+  }
+
+  querySnapshot.forEach((doc) => {
+    console.log(doc.id, " => ", doc.data()); // Вывод данных в консоль
+  });
+}).catch((error) => {
+  console.error("Ошибка при получении данных: ", error); // Обработка ошибок
+});
+
+const heroList = document.getElementById('heroList');
+heroList.innerHTML = ''; // Очистка контейнера
+
+querySnapshot.forEach((doc) => {
+  const hero = doc.data();
+  const heroElement = document.createElement('div');
+  heroElement.className = 'hero-card';
+  heroElement.innerHTML = `
+    <h3>${hero.name} ${hero.surname}</h3>
+    <p><strong>Район:</strong> ${hero.district}</p>
+    <p><strong>Награды:</strong> ${hero.awards}</p>
+    <p><strong>Год рождения:</strong> ${hero.birthYear}</p>
+    <p><strong>Школа:</strong> ${hero.school}</p>
+  `;
+  heroList.appendChild(heroElement);
+});
+
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+
+
+</body>
+</html>

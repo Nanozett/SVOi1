@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firestore Example</title>
+</head>
+<body>
+    <div id="data-container"></div>
+
+    <!-- Подключение Firebase SDK как модуль -->
+    <script type="module">
+        // Импорт Firebase модулей
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+        import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
+
+        // Конфигурация Firebase
+        const firebaseConfig = {
+          apiKey: "AIzaSyBjCKJcg2Cs2xjeIZdDAea8MOgXT_aOKnE",
+          authDomain: "patriotykt-59e2e.firebaseapp.com",
+          projectId: "patriotykt-59e2e",
+          storageBucket: "patriotykt-59e2e.firebasestorage.app",
+          messagingSenderId: "138322763855",
+          appId: "1:138322763855:web:de27b2222bd8a86b318a3a",
+          measurementId: "G-1BV8LBRLNR"
+        };
+
+        // Инициализация Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app); // Инициализация Firestore
+
+        // Функция для получения данных из Firestore
+        async function fetchData() {
+            const querySnapshot = await getDocs(collection(db, "users"));
+            const dataContainer = document.getElementById('data-container');
+            dataContainer.innerHTML = ''; // Очистка контейнера
+
+            querySnapshot.forEach((doc) => {
+                const user = doc.data();
+                const userElement = document.createElement('div');
+                userElement.innerHTML = `
+                    <h3>${user.name}</h3>
+                    <p>Email: ${user.email}</p>
+                    <p>Возраст: ${user.age}</p>
+                `;
+                dataContainer.appendChild(userElement);
+            });
+        }
+
+        // Вызов функции для получения данных
+        fetchData();
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+          const firebaseConfig = {
+    apiKey: "AIzaSyBjCKJcg2Cs2xjeIZdDAea8MOgXT_aOKnE",
+    authDomain: "patriotykt-59e2e.firebaseapp.com",
+    projectId: "patriotykt-59e2e",
+    storageBucket: "patriotykt-59e2e.firebasestorage.app",
+    messagingSenderId: "138322763855",
+    appId: "1:138322763855:web:de27b2222bd8a86b318a3a",
+    measurementId: "G-1BV8LBRLNR"
+ 

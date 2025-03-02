@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мероприятия</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+                <div class="logo">
+            <img src="images/logo.png" alt="Логотип Молодежный центр Патриот">
+        </div>
+        <h1 >ПатриотСаха.ru</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="discussions.html">Мероприятия</a></li>
+                <li><a href="quizzes.html">Образование</a></li>
+                <li><a href="geroy.html">Мой Герой</a></li>
+                <li><a href="onas.html">О нас</a></li>
+                <li><a href="admin.html">Панель админа</a></li>
+                <button id="profileButton" class="profile-button">
+                        <i class="fas fa-user"></i>
+                    </button>
+                    <a>ㅤ</a>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="events-section">
+            <h2>Мероприятия</h2>
+            <button id="addProjectButton">Добавить проект</button>
+            <div class="events-container">
+
+            </div>
+        </section>
+    </main>
+
+    <div id="addProjectModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Добавить проект</h2>
+            <form id="addProjectForm">
+                <label for="projectTitle">Название проекта:</label>
+                <input type="text" id="projectTitle" name="projectTitle" required>
+
+                <label for="projectDescription">Описание проекта:</label>
+                <textarea id="projectDescription" name="projectDescription" required></textarea>
+
+                <button type="submit">Отправить на проверку</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="event-card" data-event-id="1">
+    <img src="images/img4.jpg" alt="Мероприятие 1">
+    <h3>Поставить памятник Герою РФ Родомиру Максимову</h3>
+    <p>Поставить в центре г.Якутска и в его родном селе памятник в честь его подвига!</p>
+    <button class="support-button">Поддержать проект</button>
+    <button class="volunteer-button">Стать волонтером</button> <!-- Новая кнопка -->
+    <button type="button" onclick="init()">Проголосовать</button>
+    <span class="support-count">0 поддержек</span>
+    <div class="comments-section">
+
+        <!-- Модальное окно для анкеты волонтера -->
+<div id="volunteerModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Анкета волонтера</h2>
+        <form id="volunteerForm">
+            <label for="volunteerName">ФИО:</label>
+            <input type="text" id="volunteerName" name="volunteerName" required>
+
+            <label for="volunteerAge">Возраст:</label>
+            <input type="number" id="volunteerAge" name="volunteerAge" required>
+
+            <label for="volunteerDistrict">Район:</label>
+            <select id="volunteerDistrict" name="volunteerDistrict" required>
+                <option value="aby">Абыйский</option>
+                <option value="aldan">Алданский</option>
+                <option value="allahov">Аллаиховский</option>
+                <option value="amga">Амгинский</option>
+                <option value="anabar">Анабарский</option>
+                <option value="bulun">Булунский</option>
+                <option value="viluy">Верхневилюйский</option>
+                <option value="kolym">Верхнеколымский</option>
+                <option value="verhoyansk">Верхоянский</option>
+                <option value="viluyskiy">Вилюйский</option>
+                <option value="gorniy">Горный</option>
+                <option value="kobiy">Кобяйский</option>
+                <option value="lensk">Ленский</option>
+                <option value="meginokangas">Мегино-Кангаласский</option>
+                <option value="mirniy">Мирнинский</option>
+                <option value="mom">Момский национальный эвенский</option>
+                <option value="nam">Намский</option>
+                <option value="nerungri">Нерюнгринский</option>
+                <option value="kolymsk">Нижнеколымский</option>
+                <option value="nurba">Нюрбинский</option>
+                <option value="oimakon">Оймяконский</option>
+                <option value="olenek">Оленёкский национальный эвенкийский</option>
+                <option value="olekminsk">Олёкминский</option>
+                <option value="srednekolym">Среднеколымский</option>
+                <option value="suntar">Сунтарский</option>
+                <option value="taatta">Таттинский</option>
+                <option value="tompo">Томпонский</option>
+                <option value="ustaldan">Усть-Алданский</option>
+                <option value="ustmay">Усть-Майский</option>
+                <option value="ustyan">Усть-Янский</option>
+                <option value="hangalas">Хангаласский</option>
+                <option value="churapcha">Чурапчинский</option>
+                <option value="evenbyt">Эвено-Бытантайский национальный</option>
+                <option value="shatai">Жатай</option>
+                <option value="ykt">Якутск</option>
+                <script src="scripts.js"></script>
+            </select>
+            <script src="scripts.js"></script>
+
+            <label for="volunteerSchool">Школа:</label>
+            <input type="text" id="volunteerSchool" name="volunteerSchool" required>
+
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+</div>
+
+<div id="webcam-container"></div>
+<div id="label-container"></div>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+<script type="text/javascript">
+    // More API functions here:
+    // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
+
+    // the link to your model provided by Teachable Machine export panel
+    const URL = "https://teachablemachine.withgoogle.com/models/QYEIfn-tc/";
+
+    let model, webcam, labelContainer, maxPredictions;
+
+    // Load the image model and setup the webcam
+    async function init() {
+        const modelURL = URL + "model.json";
+        const metadataURL = URL + "metadata.json";
+
+        // load the model and metadata
+        // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
+        // or files from your local hard drive
+        // Note: the pose library adds "tmImage" object to your window (window.tmImage)
+        model = await tmImage.load(modelURL, metadataURL);
+        maxPredictions = model.getTotalClasses();
+
+        // Convenience function to setup a webcam
+        const flip = true; // whether to flip the webcam
+        webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
+        await webcam.setup(); // request access to the webcam
+        await webcam.play();
+        window.requestAnimationFrame(loop);
+
+        // append elements to the DOM
+        document.getElementById("webcam-container").appendChild(webcam.canvas);
+        labelContainer = document.getElementById("label-container");
+        for (let i = 0; i < maxPredictions; i++) { // and class labels
+            labelContainer.appendChild(document.createElement("div"));
+        }
+    }
+
+    async function loop() {
+        webcam.update(); // update the webcam frame
+        await predict();
+        window.requestAnimationFrame(loop);
+    }
+
+    // run the webcam image through the image model
+    async function predict() {
+        // predict can take in an image, video or canvas html element
+        const prediction = await model.predict(webcam.canvas);
+        for (let i = 0; i < maxPredictions; i++) {
+            const classPrediction =
+                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+            labelContainer.childNodes[i].innerHTML = classPrediction;
+        }
+    }
+</script>
+        <h4>Комментарии:</h4>
+        <ul class="comments-list">
+            <!-- Комментарии будут добавляться сюда -->
+        </ul>
+        <form class="comment-form">
+            <textarea placeholder="Напишите комментарий..." required></textarea>
+            <button type="submit">Отправить</button>
+        </form>
+
+    </div>
+</div>
+
+
+
+    <script src="scripts.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+            </div>
+        </section>
+    </main>
+
+
+
+    <script src="scripts.js"></script>
+</body>
+</html>
